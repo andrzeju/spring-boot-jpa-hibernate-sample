@@ -16,15 +16,15 @@ public class JpaController {
 	private ModelJpaRepository modelJpaRepository;
 	
 	@RequestMapping(path="/repo", method = RequestMethod.GET)
-	public Iterable<Model> findByRepo() throws IOException {
+	public Iterable<Company> findByRepo() throws IOException {
 		return modelJpaRepository.findAll();
 	}
 	
 	@RequestMapping(value = "/repo/{value}", method = RequestMethod.GET)
 	public void saveByRepo(@PathVariable String value) {
-		Model model = new Model();
+		Company model = new Company();
 		model.setId(System.currentTimeMillis());
-		model.setValue(value);
+		model.setName(value);
 		modelJpaRepository.save(model);
 	}
 }

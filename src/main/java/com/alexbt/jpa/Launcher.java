@@ -9,8 +9,8 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 public class Launcher {
 	
 	public static void main(String[] args){
-		new SpringApplicationBuilder() //
-		.sources(Launcher.class)//
+		new SpringApplicationBuilder()
+		.sources(Launcher.class)
 		.run(args);
 	}
 }
